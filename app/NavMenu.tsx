@@ -1,10 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './NavMenu.module.css';
 
-import React from 'react';
-
-function NavMenu() {
+export default function NavMenu() {
   return (
     <nav className={styles.nav}>
       <Link href="/">
@@ -24,5 +23,3 @@ function NavMenu() {
     </nav>
   );
 }
-
-export default NavMenu;
