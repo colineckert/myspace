@@ -15,7 +15,7 @@ function NavMenu() {
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/pricing">Pricing</Link>
+          <Link href="/blog">Blog</Link>
         </li>
         <li>
           <Link href="/users">Users</Link>
