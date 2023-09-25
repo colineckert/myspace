@@ -1,4 +1,4 @@
-import React from 'react';
+export const revalidate = 1200; // not necessary, just for ISR demonstration
 
 interface Post {
   title: string;
@@ -6,13 +6,22 @@ interface Post {
   slug: string;
 }
 
+export async function generateStaticParams() {
+  const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
+    (res) => res.json()
+  );
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
 
 export default async function BlogPostPage({ params }: Props) {
+  // deduped
   const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
     (res) => res.json()
   );
