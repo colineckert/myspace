@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export function SignInButton() {
   const { data: session, status } = useSession();
-  console.log(session, status);
+  console.log('SIGN IN BUTTON', session, status);
 
   if (status === 'loading') {
     return <>...</>;
